@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Веб-студия | Создаём сайты под ключ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar {
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        .hero {
+            background: linear-gradient(120deg, #1e2a3a, #0d1b2a);
+            color: white;
+            padding: 100px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 600;
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #ff6b6b;
+            margin: 15px auto;
+        }
+        .service-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+            background: white;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        .service-icon {
+            font-size: 48px;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+        .portfolio-overlay {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            right: 0;
+            background: rgba(255,107,107,0.9);
+            color: white;
+            padding: 15px;
+            transition: bottom 0.3s;
+            text-align: center;
+        }
+        .portfolio-item:hover .portfolio-overlay {
+            bottom: 0;
+        }
+        .team-card {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .team-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #ff6b6b;
+        }
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        footer {
+            background: #1e2a3a;
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #ff6b6b;
+        }
+        .btn-custom {
+            background: #ff6b6b;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+        }
+        .btn-custom:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-3" href="#">WebStudio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Услуги</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Портфолио</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Команда</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Контакты</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="hero" style="margin-top: 76px;">
+    <div class="container text-center">
+        <h1 class="display-3 fw-bold mb-3">Создаём сайты, которые работают</h1>
+        <p class="lead mb-4">Разработка, дизайн, продвижение — всё в одном месте</p>
+        <button class="btn btn-custom btn-lg text-white rounded-pill px-5">Заказать проект</button>
+    </div>
+</section>
+
+<div class="container py-5">
+    <h2 class="section-title">Наши услуги</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h4>Веб-разработка</h4>
+                <p>Создаём сайты любой сложности: от лендингов до интернет-магазинов</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h4>UI/UX дизайн</h4>
+                <p>Проектируем удобные и красивые интерфейсы для ваших пользователей</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="service-card">
+                <div class="service-icon">📈</div>
+                <h4>SEO продвижение</h4>
+                <p>Выводим сайты в топ поисковых систем и увеличиваем продажи</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-light py-5">
+    <div class="container">
+        <h2 class="section-title">Наши работы</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="portfolio-item">
+                    <img src="https://picsum.photos/id/20/400/300" alt="Проект 1">
+                    <div class="portfolio-overlay">
+                        <h5>Интернет-магазин</h5>
+                        <p>Клиент: BrandShop</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="portfolio-item">
+                    <img src="https://picsum.photos/id/26/400/300" alt="Проект 2">
+                    <div class="portfolio-overlay">
+                        <h5>Корпоративный сайт</h5>
+                        <p>Клиент: ТехноПром</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="portfolio-item">
+                    <img src="https://picsum.photos/id/30/400/300" alt="Проект 3">
+                    <div class="portfolio-overlay">
+                        <h5>Лендинг</h5>
+                        <p>Клиент: FitLife</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <h2 class="section-title">Наша команда</h2>
+    <div class="row">
+        <div class="col-md-3 col-sm-6">
+            <div class="team-card">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Антон">
+                <h5>Антон Иванов</h5>
+                <p class="text-muted">CEO & Основатель</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="team-card">
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Елена">
+                <h5>Елена Смирнова</h5>
+                <p class="text-muted">Lead Designer</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="team-card">
+                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Дмитрий">
+                <h5>Дмитрий Петров</h5>
+                <p class="text-muted">Senior Developer</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="team-card">
+                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Мария">
+                <h5>Мария Сидорова</h5>
+                <p class="text-muted">Project Manager</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-light py-5">
+    <div class="container">
+        <h2 class="section-title">Свяжитесь с нами</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="contact-form">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" placeholder="Ваше имя">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="email" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Тема">
+                        </div>
+                        <div class="mb-3">
+                            <textarea rows="5" class="form-control" placeholder="Сообщение"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-custom text-white w-100 rounded-pill">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>WebStudio</h4>
+                <p>Создаём качественные сайты с 2020 года. Более 100 довольных клиентов.</p>
+            </div>
+            <div class="col-md-3">
+                <h5>Контакты</h5>
+                <p>📞 +7 (999) 123-45-67<br>✉️ info@webstudio.ru</p>
+            </div>
+            <div class="col-md-3">
+                <h5>Мы в соцсетях</h5>
+                <div class="social-links">
+                    <a href="#">📘</a>
+                    <a href="#">📸</a>
+                    <a href="#">💬</a>
+                    <a href="#">🎥</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4 pt-3" style="border-top: 1px solid rgba(255,255,255,0.1);">
+            <p class="mb-0">© 2025 WebStudio. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
