@@ -1,0 +1,121 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar {
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        .hero {
+            background: linear-gradient(120deg, #1e2a3a, #0d1b2a);
+            color: white;
+            padding: 100px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 600;
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #ff6b6b;
+            margin: 15px auto;
+        }
+        .service-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+            background: white;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        .service-icon {
+            font-size: 48px;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+        .portfolio-overlay {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            right: 0;
+            background: rgba(255,107,107,0.9);
+            color: white;
+            padding: 15px;
+            transition: bottom 0.3s;
+            text-align: center;
+        }
+        .portfolio-item:hover .portfolio-overlay {
+            bottom: 0;
+        }
+        .team-card {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .team-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #ff6b6b;
+        }
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        footer {
+            background: #1e2a3a;
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #ff6b6b;
+        }
+        .btn-custom {
+            background: #ff6b6b;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+        }
+        .btn-custom:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+        }
